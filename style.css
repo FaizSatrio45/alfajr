@@ -1,0 +1,515 @@
+:root{
+    --ijo: rgb(84, 180, 53);
+    --abu: rgb(138, 138, 138); 
+    --ijotua: rgb(59, 128, 37)
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'poppins';
+}
+
+html{
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    overflow-x: hidden;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background: var(--ijo);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 1px 5px 3px rgba(1, 1, 3, 0.3);
+}
+
+nav .navbar-logo h2{
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    box-shadow: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    font-weight: 400;
+    margin-left: auto;
+}
+
+nav ul li a:after{
+    color: #fff;
+    content: '';
+    display: block;
+    padding: 0.2rem;
+    border-bottom: 0.2rem solid #fff;
+    transform: scaleX(0);
+    transition: 0.3s linear;
+}
+
+
+
+nav ul li a:hover::after{
+    transform: scaleX(0.8);
+    color: #fff;
+}
+
+nav ul li a:hover,
+nav .navbar-extra:hover{
+    color: #fff;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menu-toogle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toogle input{
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    left: -10px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toogle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.7s;
+}
+.menu-toogle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toogle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.menu-toogle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg); 
+    translate: -1px -1px;
+}
+.menu-toogle input:checked ~ span:nth-child(3){
+    transform: scale(0)
+}
+.menu-toogle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg);
+    translate: -1px 0;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( 0deg, rgba( 0, 0, 0, 0.4) 0%, rgba( 0, 0, 0, 0.6) 100%), url(https://alazharasysyarifsumut.sch.id/wp-content/uploads/2022/09/Gedung-Kelas-Ikhwan-1536x864.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+}
+.hero .content{
+    padding: 1.4rem 7%;
+    max-width: 70rem;
+    margin: auto;
+    text-align: center;
+}
+.hero .content h1{
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    text-align: center;
+}
+.hero .content p{
+    font-size: 1.4em;
+    margin-top: 1rem;
+    line-height: 1.4;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    text-align: center;
+}
+.hero .content .cta{
+    margin: auto;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: white;
+    background: var(--ijo);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    text-align: center;
+    transition: 0.5s;
+    border: 1px solid var(--ijo);
+}
+
+.hero .content .cta:hover{
+    background: none;
+    border: 1px solid #fff;
+}
+
+
+
+
+/* .about{
+    box-shadow: 5px 5px 3px rgba(1, 1, 3, 0.3);
+    z-index: 100;
+} */
+
+.about h2,
+.contact h2{
+    text-align: center;
+    font-size: 2.6rem;
+    padding-bottom: 1rem;
+    color: var(--ijo);
+    padding-top: 3rem;
+}
+
+.about hr{
+    border: 2px solid var(--ijo);
+    width: 20%;
+    margin: auto;
+}
+
+.about .row{
+    display: flex;
+}
+
+.about .row .content{
+    margin: 2rem auto;
+    
+}
+.about .row .content h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--ijo);
+}
+.about .row .content p{
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 50rem;
+    color: var(--abu);
+}
+
+.program{
+    background: var(--ijo);
+    padding: 3rem;
+}
+
+.program h2{
+    text-align: center;
+    font-size: 2.6rem;
+    color: #fff;
+    padding: 1rem;
+}
+
+.program hr{
+    border: 2px solid #fff;
+    width: 20%;
+    margin: auto;
+}
+
+.program p{
+    margin: auto;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 60rem;
+    color: #fff;
+}
+
+.program .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+     gap: 2rem;
+}
+
+.program .row .menu-card{
+    width: 20rem;
+    height: 30rem;
+    text-align: center;
+    padding-bottom: 4rem;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgba(1, 1, 3, 0.5);
+    border-radius: 1rem;
+}
+.program .row .menu-card img{
+    /* border-radius: 50%; */
+    width: 50%;
+    margin-top: 2.5rem;
+}
+.program .row .menu-card .menu-card-title{
+    margin: 1rem auto 0.5rem;
+    color: var(--ijo);
+    font-size: 1.5rem;
+}
+
+.program .row .menu-card .menu-card-price{
+    margin: 1rem auto 0.5rem;
+    color: var(--abu);
+    font-size: 1rem;
+    max-width: 15rem;
+}
+
+.contact{
+    /* height: 100vh; */
+    padding: 2rem;
+}
+
+.contact hr{
+    border: 2px solid var(--ijo);
+    width: 25%;
+    margin: auto;
+}
+
+.container{
+    width: 85%;
+    margin: auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin-top: 3rem;
+}
+
+
+form{
+    display: flex !important; 
+    flex-direction: column;
+    /* width: 20rem;
+    height: 3rem; */
+    gap: 20px;
+    color: white;
+}
+
+form input{
+    /* width: 10rem; */
+    height: 10px;
+    background: #fff;
+    border: 0.2rem solid var(--ijo);
+    height: 30px;
+    width: 75%;
+    padding: 5px 20px;
+    font-family: 'poppins';
+    color: white;
+    /* display: block; */
+    border-radius: 1rem;
+}
+form input::placeholder,
+form textarea::placeholder{
+    color:var(--abu);
+}
+form input:focus,
+form textarea:focus{
+    color: var(--abu);
+}
+
+form textarea{
+    background: #fff;
+    border: 0.2rem solid var(--ijo);
+    height: 120px;
+    width: 75%;
+    padding: 10px 20px;
+    font-family: 'poppins';
+    color: var(--abu);
+    resize: vertical;
+    border-radius: 1rem;
+    
+}
+.info{
+    text-align: center;
+}
+
+.info h3{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--ijo);
+    padding-bottom: 2rem;
+}
+
+.info p,
+.info i{
+    margin: 1rem;
+}
+
+.info div {
+    display: flex;
+    gap: 3rem;
+    font-size: 1.5rem;
+    color: var(--abu);
+    text-align: center;
+}
+
+footer{
+    background: var(--ijo);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .social{
+    padding: 1rem 0;
+}
+
+footer .social a{
+   color: #fff;
+   margin: 1rem; 
+}
+
+footer .social a:hover,
+footer .links a:hover{
+    color: var(--ijotua);
+}
+
+footer .links{
+    margin-bottom: 1.4rem;
+}
+
+footer .links a{
+    color: #fff;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit{
+    font-size: 0.8rem;
+} 
+
+footer .credit a{
+    color: #fff;
+    font-weight: 700;
+}
+
+.credit p{
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 1366px){
+    html{
+        font-size: 75%;
+    }
+}
+@media screen and (max-width: 768px){
+    html{
+        font-size: 62.5%;
+    }
+    nav ul{
+        width: 50%;
+    }
+    .about .row{
+        flex-wrap: wrap;
+    }
+    .about .row .content{
+        padding: 2rem;
+    }
+    .about .row .content h3{
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .about .row .content p{
+        font-size: 1.6rem;
+    }
+    .menu p{
+        font-size: 1.2rem;
+    }
+    .contact .row{
+        flex-wrap: wrap;
+    }
+    .contact .row .map{
+        height: 30rem;
+    }
+    .contact .row form{
+        padding-top: 0 ;
+    }
+}
+@media screen and (max-width: 576px){
+    html{
+        font-size: 55%;
+    }
+    .menu-toogle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background: var(--ijo);
+        z-index: -1;
+        transform: translate(100%);
+        transition: all 0.7s;
+    }
+    nav ul.slide{
+    transform: translateX(0)
+    }
+    #hamburger-menu{
+        display: flex;
+    }
+
+    .about .row .content h3{
+        font-size: 2rem;
+    }
+
+    .about .row .content p{
+        font-size: 1.3rem;
+    }
+
+    form input,
+    form textarea{
+        font-size: 100%;
+    }
+
+    .info p{
+        font-size: 1rem;
+    }
+}
+
+
+
